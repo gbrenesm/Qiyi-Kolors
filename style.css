@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1vw;
+}
+
+ul>li {
+    color: white;
+    list-style: none;
+    padding: 1vw;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    margin: 2vh;
+}
