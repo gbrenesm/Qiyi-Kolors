@@ -3,8 +3,8 @@ let img;
 let cuadritos = [];
 let cuadritosheight;
 let cuadritoswidth;
-let espacioX
-let espacioY
+let espacioX = ($canvas.width / nivel) * (nivel - 1)
+let espacioY = ($canvas.height / nivel) * (nivel - 1)
 let mouseX
 let mouseY
 let mouseDown = false;

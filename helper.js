@@ -6,6 +6,7 @@
 function clearCanvas() {
     ctx.clearRect(0, 0, $canvas.width, $canvas.height)
 } */
+
 startBtn.addEventListener("click", iniciar)
 
 function iniciar() {
@@ -89,11 +90,10 @@ $canvas.addEventListener('mousedown', e => {
     mouseDown = true;
     mouseX = e.pageX - $canvas.offsetLeft; 
     mouseY = e.pageY - $canvas.offsetTop;
+    mover()
 })
 
 function mover() {
-    espacioX = ($canvas.width / nivel) * (nivel - 1)
-    espacioY = ($canvas.height / nivel) * (nivel - 1)
     for (i = 0; i < cuadritos.length; i++) {
         if (mouseDown) {
             if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
@@ -105,7 +105,7 @@ function mover() {
                         cuadritos[i].yPos = espacioY
                         espacioX = nuevoEspacioX
                         espacioY = nuevoEspacioY
-                }
+                    }
             }
         ctx.drawImage(img, cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight, cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
 
@@ -113,9 +113,12 @@ function mover() {
     }
 }
 
-function winGame(){
-    for (i = 0; i < cuadritos.length; i++ ){
-        if (cuadritos[i].sx == cuadritos[i].xPos && cuadritos[i].sy == cuadritos[i].yPos)
+// function winGame(){
+//     for (i = 0; i < cuadritos.length; i++ ){
+//         if (cuadritos[i].sx == cuadritos[i].xPos && cuadritos[i].sy == cuadritos[i].yPos){
+//             ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+//             nextLevel()
+//         }
 
-    }
-}
+//     }
+// }
