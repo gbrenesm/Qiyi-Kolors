@@ -1,11 +1,13 @@
-let nivel = 2;
+let nivel = 4;
 let img;
 let cuadritos = [];
 let cuadritosheight;
 let cuadritoswidth;
 let espacioX
 let espacioY
-let mouse = { x: 0, y: 0 };
+let mouseX
+let mouseY
+let mouseDown = false;
 let imagenesColors = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"];
 
 // El número que es divisible entre 3, 4 y 5 es 180, o sea que puede ser de: 360 ó 720

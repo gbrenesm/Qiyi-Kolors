@@ -12,7 +12,7 @@ function iniciar() {
     img = new Image();
     img.addEventListener(`load`, dividirCuadritos)
     let random = Math.floor(Math.random() * imagenesColors.length)
-    img.src = imagenesColors[random]
+    img.src = "./img/bluecuadrito.jpg"
     //creo que el problema es el random aquí
 }
 
@@ -56,14 +56,12 @@ function shuffleCuadritos() {
 
     cuadritos = shuffleArray(cuadritos)
     // $canvas.clearReact(0, 0, $canvas.width, $canvas.height);
-    let cuadro;
     let xPos = 0
     let yPos = 0;
     for (let i = 0; i < cuadritos.length; i++) {
-        cuadro = cuadritos[i];
-        cuadro.xPos = xPos;
-        cuadro.yPos = yPos
-        ctx.drawImage(img, cuadro.sx, cuadro.sy, cuadritoswidth, cuadritosheight, xPos, yPos, cuadritoswidth, cuadritosheight);
+        cuadritos[i].xPos = xPos
+        cuadritos[i].yPos = yPos
+        ctx.drawImage(img, cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight, cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight);
         xPos += cuadritoswidth;
         if (xPos >= $canvas.width) {
             xPos = 0;
@@ -83,6 +81,10 @@ function shuffleArray(array) {
     return array
 }
 
+function onGame(){
+    mover()
+}
+
 $canvas.addEventListener('mousedown', e => {
     mouseDown = true;
     mouseX = e.pageX - $canvas.offsetLeft; 
@@ -94,19 +96,26 @@ function mover() {
     espacioY = ($canvas.height / nivel) * (nivel - 1)
     for (i = 0; i < cuadritos.length; i++) {
         if (mouseDown) {
-            if (cuadritos[i].sx < mouseX && (cuadritos[i].sx + cuadritoswidth) > mouseX && cuadritos[i].sy < mouseY && (cuadritos[i].sy + cuadritosheight) > mouseY) {
-                if (cuadritos[i].sx == espacioX && (cuadritos[i].sy == espacioY - cuadritosheight || cuadritos[i].sy == espacioY + cuadritosheight) || cuadritos[i].sy == espacioY && (cuadritos[i].sx == espacioX - cuadritoswidth || cuadritos[i].sx == espacioX + cuadritoswidth)) {
-                        ctx.clearRect(cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight)
-                        nuevoEspacioX = cuadritos[i].sx
-                        nuevoEspacioY = cuadritos[i].sy
-                        cuadritos[i].sx = espacioX
-                        cuadritos[i].sy = espacioY
+            if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
+                if (cuadritos[i].xPos == espacioX && (cuadritos[i].yPos == espacioY - cuadritosheight || cuadritos[i].yPos == espacioY + cuadritosheight) || cuadritos[i].yPos == espacioY && (cuadritos[i].xPos == espacioX - cuadritoswidth || cuadritos[i].xPos == espacioX + cuadritoswidth)) {
+                        ctx.clearRect(cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
+                        nuevoEspacioX = cuadritos[i].xPos
+                        nuevoEspacioY = cuadritos[i].yPos
+                        cuadritos[i].xPos = espacioX
+                        cuadritos[i].yPos = espacioY
                         espacioX = nuevoEspacioX
                         espacioY = nuevoEspacioY
                 }
             }
-        ctx.drawImage(img, cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight, 50, 50, cuadritoswidth, cuadritosheight)
+        ctx.drawImage(img, cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight, cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
 
         }
+    }
+}
+
+function winGame(){
+    for (i = 0; i < cuadritos.length; i++ ){
+        if (cuadritos[i].sx == cuadritos[i].xPos && cuadritos[i].sy == cuadritos[i].yPos)
+
     }
 }

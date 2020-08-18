@@ -5,7 +5,7 @@
 
 body {
     background-color: black;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin: 0px;
     padding: 0px;
     background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
@@ -32,7 +32,7 @@ ul>li {
 h1 {
     color: white;
     font-family: 'Alata', sans-serif;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 p {
