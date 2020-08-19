@@ -60,15 +60,15 @@ function shuffleArray(array) {
 
 
 $canvas.addEventListener('mousedown', e => {
-    mouseX = e.pageX - $canvas.offsetLeft;
-    mouseY = e.pageY - $canvas.offsetTop;
+    mouseX = e.offsetX;
+    mouseY = e.offsetY;
     mover()
     winLevel()
 })
 
 function mover() {
     for (i = 0; i < cuadritos.length; i++) {
-        if (cuadritos[i].xPos < (mouseX - 80) && (cuadritos[i].xPos + cuadritoswidth) > (mouseX - 80) && cuadritos[i].yPos < (mouseY - 80) && (cuadritos[i].yPos + cuadritosheight) > (mouseY - 80)) {
+        if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY  && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
             if (cuadritos[i].xPos == espacioX && (cuadritos[i].yPos == espacioY - cuadritosheight || cuadritos[i].yPos == espacioY + cuadritosheight) || cuadritos[i].yPos == espacioY && (cuadritos[i].xPos == espacioX - cuadritoswidth || cuadritos[i].xPos == espacioX + cuadritoswidth)) {
                 ctx.clearRect(cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
                 nuevoEspacioX = cuadritos[i].xPos
