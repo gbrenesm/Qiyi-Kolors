@@ -46,9 +46,9 @@ buttonstart.addEventListener('click', () => {
     firstslide.style.visibility = 'hidden';
     canvasshow.style.visibility = 'visible';
     titledis.style.visibility = 'hidden';
-    document.getElementById("img-picker").src = imagenseleccionada
+    //     document.getElementById("img-picker").src = imagenseleccionada
 });
 
-function myFunction() {
-    document.getElementById("img-picker").src = imagenseleccionada
-}
+// function myFunction() {
+//     document.getElementById("img-picker").src = imagenseleccionada
+// }

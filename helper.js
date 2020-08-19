@@ -6,6 +6,7 @@ function iniciar() {
     let random = Math.floor(Math.random() * imagenesColors.length)
     img.src = imagenesColors[random]
     imagenseleccionada = img.src
+    document.getElementById("img-picker").src = imagenseleccionada
 }
 
 function dividirCuadritos() {
@@ -96,6 +97,7 @@ function winLevel() {
                     cuadritos[6].sx === cuadritos[6].xPos && cuadritos[6].sy == cuadritos[6].yPos &&
                     cuadritos[7].sx === cuadritos[7].xPos && cuadritos[7].sy == cuadritos[7].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    nextLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -118,6 +120,7 @@ function winLevel() {
                     cuadritos[13].sx === cuadritos[13].xPos && cuadritos[13].sy == cuadritos[13].yPos &&
                     cuadritos[14].sx === cuadritos[14].xPos && cuadritos[14].sy == cuadritos[14].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    nextLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -149,6 +152,7 @@ function winLevel() {
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    extLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -180,6 +184,7 @@ function winLevel() {
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    extLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -231,7 +236,10 @@ function winLevel() {
 }
 
 function nextLevel() {
+    nextLevlBtn.style.visibility = 'hidden'
+    document.getElementById("img-picker").src = ""
     nivel++
+    imagenesColors = imagenesColors.filter(imagen => imagen !== imagenseleccionada)
     if (nivel < 3 || nivel == 4) {
         grid++
     }
