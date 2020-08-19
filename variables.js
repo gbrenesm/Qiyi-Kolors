@@ -1,4 +1,5 @@
-let nivel = 3;
+let grid = 3;
+let nivel = 1
 let img;
 let cuadritos = [];
 let cuadritosheight;
