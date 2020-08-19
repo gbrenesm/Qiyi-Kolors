@@ -3,7 +3,7 @@ startBtn.addEventListener("click", iniciar)
 function iniciar() {
     img = new Image();
     img.addEventListener(`load`, dividirCuadritos)
-    //hacer if para niveles fáciles y difíciles
+        //hacer if para niveles fáciles y difíciles
     let random = Math.floor(Math.random() * imagenesColors.length)
     img.src = "./img/bluecuadrito.jpg"
 }
@@ -61,7 +61,7 @@ function shuffleArray(array) {
 
 $canvas.addEventListener('mousedown', e => {
     mouseDown = true;
-    mouseX = e.pageX - $canvas.offsetLeft; 
+    mouseX = e.pageX - $canvas.offsetLeft;
     mouseY = e.pageY - $canvas.offsetTop;
     mover()
     winLevel()
@@ -72,24 +72,24 @@ function mover() {
         if (mouseDown) {
             if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
                 if (cuadritos[i].xPos == espacioX && (cuadritos[i].yPos == espacioY - cuadritosheight || cuadritos[i].yPos == espacioY + cuadritosheight) || cuadritos[i].yPos == espacioY && (cuadritos[i].xPos == espacioX - cuadritoswidth || cuadritos[i].xPos == espacioX + cuadritoswidth)) {
-                        ctx.clearRect(cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
-                        nuevoEspacioX = cuadritos[i].xPos
-                        nuevoEspacioY = cuadritos[i].yPos
-                        cuadritos[i].xPos = espacioX
-                        cuadritos[i].yPos = espacioY
-                        espacioX = nuevoEspacioX
-                        espacioY = nuevoEspacioY
-                    }
+                    ctx.clearRect(cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
+                    nuevoEspacioX = cuadritos[i].xPos
+                    nuevoEspacioY = cuadritos[i].yPos
+                    cuadritos[i].xPos = espacioX
+                    cuadritos[i].yPos = espacioY
+                    espacioX = nuevoEspacioX
+                    espacioY = nuevoEspacioY
+                }
             }
-        ctx.drawImage(img, cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight, cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
+            ctx.drawImage(img, cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight, cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
         }
     }
 }
 
-function winLevel(){
+function winLevel() {
     switch (nivel) {
         case 1:
-            for(i = 0; i < cuadritos.length; i++){
+            for (i = 0; i < cuadritos.length; i++) {
                 if (cuadritos[0].sx === cuadritos[0].xPos && cuadritos[0].sy == cuadritos[0].yPos &&
                     cuadritos[1].sx === cuadritos[1].xPos && cuadritos[1].sy == cuadritos[1].yPos &&
                     cuadritos[2].sx === cuadritos[2].xPos && cuadritos[2].sy == cuadritos[2].yPos &&
@@ -98,16 +98,16 @@ function winLevel(){
                     cuadritos[5].sx === cuadritos[5].xPos && cuadritos[5].sy == cuadritos[5].yPos &&
                     cuadritos[6].sx === cuadritos[6].xPos && cuadritos[6].sy == cuadritos[6].yPos &&
                     cuadritos[7].sx === cuadritos[7].xPos && cuadritos[7].sy == cuadritos[7].yPos &&
-                    cuadritos[8].sx === cuadritos[8].xPos && cuadritos[8].sy == cuadritos[8].yPos){
-                        ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    cuadritos[8].sx === cuadritos[8].xPos && cuadritos[8].sy == cuadritos[8].yPos) {
+                    ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                         //llamar al botón de siguiente nivel
-                    }
                 }
-                nivel++ //va a subir el nivel a 2
-                grid++  //va a subir el grid a 4
+            }
+            nivel++ //va a subir el nivel a 2
+            grid++ //va a subir el grid a 4
             break;
         case 2:
-            for(i = 0; i < cuadritos.length; i++){
+            for (i = 0; i < cuadritos.length; i++) {
                 if (cuadritos[0].sx === cuadritos[0].xPos && cuadritos[0].sy == cuadritos[0].yPos &&
                     cuadritos[1].sx === cuadritos[1].xPos && cuadritos[1].sy == cuadritos[1].yPos &&
                     cuadritos[2].sx === cuadritos[2].xPos && cuadritos[2].sy == cuadritos[2].yPos &&
@@ -123,16 +123,16 @@ function winLevel(){
                     cuadritos[12].sx === cuadritos[12].xPos && cuadritos[12].sy == cuadritos[12].yPos &&
                     cuadritos[13].sx === cuadritos[13].xPos && cuadritos[13].sy == cuadritos[13].yPos &&
                     cuadritos[14].sx === cuadritos[14].xPos && cuadritos[14].sy == cuadritos[14].yPos &&
-                    cuadritos[15].sx === cuadritos[15].xPos && cuadritos[15].sy == cuadritos[15].yPos){
-                        ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    cuadritos[15].sx === cuadritos[15].xPos && cuadritos[15].sy == cuadritos[15].yPos) {
+                    ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                         //llamar al botón de siguiente nivel
-                    }
                 }
-                nivel++ //va a subir el nivel a 3
-                grid++ //va a subir el grid a 5
+            }
+            nivel++ //va a subir el nivel a 3
+            grid++ //va a subir el grid a 5
             break;
         case 3:
-            for(i = 0; i < cuadritos.length; i++){
+            for (i = 0; i < cuadritos.length; i++) {
                 if (cuadritos[0].sx === cuadritos[0].xPos && cuadritos[0].sy == cuadritos[0].yPos &&
                     cuadritos[1].sx === cuadritos[1].xPos && cuadritos[1].sy == cuadritos[1].yPos &&
                     cuadritos[2].sx === cuadritos[2].xPos && cuadritos[2].sy == cuadritos[2].yPos &&
@@ -157,15 +157,15 @@ function winLevel(){
                     cuadritos[21].sx === cuadritos[21].xPos && cuadritos[21].sy == cuadritos[21].yPos &&
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos &&
-                    cuadritos[24].sx === cuadritos[24].xPos && cuadritos[24].sy == cuadritos[24].yPos){
-                        ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    cuadritos[24].sx === cuadritos[24].xPos && cuadritos[24].sy == cuadritos[24].yPos) {
+                    ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                         //llamar al botón de siguiente nivel
-                    }
                 }
-                nivel++ //va a subir el nivel 4 el grid se mantiene en 5
+            }
+            nivel++ //va a subir el nivel 4 el grid se mantiene en 5
             break;
         case 4:
-            for(i = 0; i < cuadritos.length; i++){
+            for (i = 0; i < cuadritos.length; i++) {
                 if (cuadritos[0].sx === cuadritos[0].xPos && cuadritos[0].sy == cuadritos[0].yPos &&
                     cuadritos[1].sx === cuadritos[1].xPos && cuadritos[1].sy == cuadritos[1].yPos &&
                     cuadritos[2].sx === cuadritos[2].xPos && cuadritos[2].sy == cuadritos[2].yPos &&
@@ -190,16 +190,16 @@ function winLevel(){
                     cuadritos[21].sx === cuadritos[21].xPos && cuadritos[21].sy == cuadritos[21].yPos &&
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos &&
-                    cuadritos[24].sx === cuadritos[24].xPos && cuadritos[24].sy == cuadritos[24].yPos){
-                        ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    cuadritos[24].sx === cuadritos[24].xPos && cuadritos[24].sy == cuadritos[24].yPos) {
+                    ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                         //llamar al botón de siguiente nivel
-                    }
                 }
-                nivel++ //va a subir el nivel a 5
-                grid++  //va a subir el grid a 6
+            }
+            nivel++ //va a subir el nivel a 5
+            grid++ //va a subir el grid a 6
             break;
         case 5:
-            for(i = 0; i < cuadritos.length; i++){
+            for (i = 0; i < cuadritos.length; i++) {
                 if (cuadritos[0].sx === cuadritos[0].xPos && cuadritos[0].sy == cuadritos[0].yPos &&
                     cuadritos[1].sx === cuadritos[1].xPos && cuadritos[1].sy == cuadritos[1].yPos &&
                     cuadritos[2].sx === cuadritos[2].xPos && cuadritos[2].sy == cuadritos[2].yPos &&
@@ -235,18 +235,18 @@ function winLevel(){
                     cuadritos[32].sx === cuadritos[32].xPos && cuadritos[32].sy == cuadritos[32].yPos &&
                     cuadritos[33].sx === cuadritos[33].xPos && cuadritos[33].sy == cuadritos[33].yPos &&
                     cuadritos[34].sx === cuadritos[34].xPos && cuadritos[34].sy == cuadritos[34].yPos &&
-                    cuadritos[35].sx === cuadritos[35].xPos && cuadritos[35].sy == cuadritos[35].yPos){
-                        ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
-                        winGame()
+                    cuadritos[35].sx === cuadritos[35].xPos && cuadritos[35].sy == cuadritos[35].yPos) {
+                    ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
+                    winGame()
                         //llamar al botón de siguiente nivel
-                    }
                 }
-                nivel++ //va a subir el nivel a 5
-                grid++  //va a subir el grid a 6
+            }
+            nivel++ //va a subir el nivel a 5
+            grid++ //va a subir el grid a 6
             break;
     }
 }
 
-function winGame(){
+/* function winGame(){
     //sacar una 
-}
+} */
