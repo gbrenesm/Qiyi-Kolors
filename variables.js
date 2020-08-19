@@ -9,4 +9,9 @@ let espacioY = ($canvas.height / grid) * (grid - 1)
 let mouseX
 let mouseY
 let mouseDown = false;
-let imagenesColors = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg", "./img/6.jpg", "./img/7.jpg", "./img/8.jpg", "./img/9.jpg", "./img/10.jpg"];
+let imagenesColors = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg"];
+let imagenseleccionada;
+
+// El número que es divisible entre 3, 4 y 5 es 180, o sea que puede ser de: 360 ó 720
+
+// intervalId = setInterval(update, 1000 / 60)

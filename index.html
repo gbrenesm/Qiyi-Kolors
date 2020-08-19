@@ -18,6 +18,7 @@
                     Blind Color</li>
                 <li>
                     Spanish</li>
+                <li class="instructions">Instructions</li>
             </ul>
         </nav>
         <section>
@@ -43,14 +44,15 @@
                 <div class="levels" id="levels1" style="visibility: hidden;">
                     <div class="gameboard">
 
-                        <canvas id="test" width="600 " height="600 " style="border: 2px solid #ffffff; background-color: #ffffff;"></canvas>
+                        <canvas id="test" width="600 " height="600 " style="border: 5px solid linear-gradient(to left, #051937, #00285f, #003688, #0d44b3, #3450de); background-color: #000000;"></canvas>
 
                     </div>
 
                     <div class="inicio-anim">
-                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                        <lottie-player src="https://assets3.lottiefiles.com/datafiles/gESGR32gqg7VYQX/data.json" background="transparent" speed="1" style="width: 300px; height: 300px; transform: rotate(90deg);" loop autoplay></lottie-player>
-                        <button id="next-level" class="glow-on-hover" type="button" onclick="document.getElementById('start-game').style.visibility='hidden'">Next Level!</button>
+                        <p class="parrafo-ins" style="width: 300px; height: 250px; justify-content: center; text-align: center; padding-left:30px; padding-top: 50px; margin-top: 30px; text-justify:newspaper">Click the center of the square to move it to the free space. You can pass the mouse on the image above to take a hint</p>
+
+                        <img id="img-picker" src="img/1.jpg" alt="" style="width: 300px; height: 300px;">
+                        <button id="next-level" class="glow-on-hover" type="button" style="visibility: hidden">Next Level!</button>
                     </div>
 
 
@@ -62,10 +64,12 @@
         </section>
     </section>
     <script src="canva.js "></script>
-    <script src="keys.js "></script>
+    <script src="classes.js "></script>
+
     <script src="helper.js "></script>
     <script src="variables.js "></script>
-    <script src="animation.js "></script>
+    <script src="keys.js "></script>
+
 </body>
 
 </html>
