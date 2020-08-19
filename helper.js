@@ -3,9 +3,8 @@ startBtn.addEventListener("click", iniciar)
 function iniciar() {
     img = new Image();
     img.addEventListener(`load`, dividirCuadritos)
-    //hacer if para niveles fáciles y difíciles
     let random = Math.floor(Math.random() * imagenesColors.length)
-    img.src = "./img/bluecuadrito.jpg"
+    img.src = "./img/Almendro_en_flor.jpg"
 }
 
 function dividirCuadritos() {
@@ -97,14 +96,11 @@ function winLevel(){
                     cuadritos[4].sx === cuadritos[4].xPos && cuadritos[4].sy == cuadritos[4].yPos &&
                     cuadritos[5].sx === cuadritos[5].xPos && cuadritos[5].sy == cuadritos[5].yPos &&
                     cuadritos[6].sx === cuadritos[6].xPos && cuadritos[6].sy == cuadritos[6].yPos &&
-                    cuadritos[7].sx === cuadritos[7].xPos && cuadritos[7].sy == cuadritos[7].yPos &&
-                    cuadritos[8].sx === cuadritos[8].xPos && cuadritos[8].sy == cuadritos[8].yPos){
+                    cuadritos[7].sx === cuadritos[7].xPos && cuadritos[7].sy == cuadritos[7].yPos){
                         ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
-                        //llamar al botón de siguiente nivel
+                        nextLevlBtn.addEventListener("click", nextLevel)
                     }
                 }
-                nivel++ //va a subir el nivel a 2
-                grid++  //va a subir el grid a 4
             break;
         case 2:
             for(i = 0; i < cuadritos.length; i++){
@@ -122,14 +118,11 @@ function winLevel(){
                     cuadritos[11].sx === cuadritos[11].xPos && cuadritos[11].sy == cuadritos[11].yPos &&
                     cuadritos[12].sx === cuadritos[12].xPos && cuadritos[12].sy == cuadritos[12].yPos &&
                     cuadritos[13].sx === cuadritos[13].xPos && cuadritos[13].sy == cuadritos[13].yPos &&
-                    cuadritos[14].sx === cuadritos[14].xPos && cuadritos[14].sy == cuadritos[14].yPos &&
-                    cuadritos[15].sx === cuadritos[15].xPos && cuadritos[15].sy == cuadritos[15].yPos){
+                    cuadritos[14].sx === cuadritos[14].xPos && cuadritos[14].sy == cuadritos[14].yPos){
                         ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
-                        //llamar al botón de siguiente nivel
+                        nextLevlBtn.addEventListener("click", nextLevel)
                     }
                 }
-                nivel++ //va a subir el nivel a 3
-                grid++ //va a subir el grid a 5
             break;
         case 3:
             for(i = 0; i < cuadritos.length; i++){
@@ -156,13 +149,11 @@ function winLevel(){
                     cuadritos[20].sx === cuadritos[20].xPos && cuadritos[20].sy == cuadritos[20].yPos &&
                     cuadritos[21].sx === cuadritos[21].xPos && cuadritos[21].sy == cuadritos[21].yPos &&
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
-                    cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos &&
-                    cuadritos[24].sx === cuadritos[24].xPos && cuadritos[24].sy == cuadritos[24].yPos){
+                    cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos){
                         ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
-                        //llamar al botón de siguiente nivel
+                        nextLevlBtn.addEventListener("click", nextLevel)
                     }
                 }
-                nivel++ //va a subir el nivel 4 el grid se mantiene en 5
             break;
         case 4:
             for(i = 0; i < cuadritos.length; i++){
@@ -189,14 +180,11 @@ function winLevel(){
                     cuadritos[20].sx === cuadritos[20].xPos && cuadritos[20].sy == cuadritos[20].yPos &&
                     cuadritos[21].sx === cuadritos[21].xPos && cuadritos[21].sy == cuadritos[21].yPos &&
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
-                    cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos &&
-                    cuadritos[24].sx === cuadritos[24].xPos && cuadritos[24].sy == cuadritos[24].yPos){
+                    cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos){
                         ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
-                        //llamar al botón de siguiente nivel
+                        nextLevlBtn.addEventListener("click", nextLevel)
                     }
                 }
-                nivel++ //va a subir el nivel a 5
-                grid++  //va a subir el grid a 6
             break;
         case 5:
             for(i = 0; i < cuadritos.length; i++){
@@ -234,19 +222,36 @@ function winLevel(){
                     cuadritos[31].sx === cuadritos[31].xPos && cuadritos[31].sy == cuadritos[31].yPos &&
                     cuadritos[32].sx === cuadritos[32].xPos && cuadritos[32].sy == cuadritos[32].yPos &&
                     cuadritos[33].sx === cuadritos[33].xPos && cuadritos[33].sy == cuadritos[33].yPos &&
-                    cuadritos[34].sx === cuadritos[34].xPos && cuadritos[34].sy == cuadritos[34].yPos &&
-                    cuadritos[35].sx === cuadritos[35].xPos && cuadritos[35].sy == cuadritos[35].yPos){
+                    cuadritos[34].sx === cuadritos[34].xPos && cuadritos[34].sy == cuadritos[34].yPos){
                         ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                         winGame()
                         //llamar al botón de siguiente nivel
                     }
                 }
-                nivel++ //va a subir el nivel a 5
-                grid++  //va a subir el grid a 6
             break;
     }
 }
 
+function nextLevel (){
+    nivel ++
+    if (nivel < 3 || nivel == 4){
+        grid++
+    }
+    ctx.clearRect(0, 0, $canvas.width, $canvas.height)
+    cuadritos.length = 0
+    iniciar()
+}
+
 function winGame(){
-    //sacar una 
+    
+    //desplegar mensaje
+    //desplegar botón de restart
+}
+
+funtion restart(){
+    cuadritos.length = 0
+    nivel = 1
+    grid = 3
+    //resgresar todo a su posición original
+    //voler a sacar el botón de start game
 }
