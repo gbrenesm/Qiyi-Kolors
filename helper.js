@@ -4,7 +4,7 @@ function iniciar() {
     img = new Image();
     img.addEventListener(`load`, dividirCuadritos)
     let random = Math.floor(Math.random() * imagenesColors.length)
-    img.src = imagenesColors[random ]
+    img.src = imagenesColors[random]
 }
 
 function dividirCuadritos() {
@@ -59,7 +59,6 @@ function shuffleArray(array) {
 
 
 $canvas.addEventListener('mousedown', e => {
-    mouseDown = true;
     mouseX = e.pageX - $canvas.offsetLeft; 
     mouseY = e.pageY - $canvas.offsetTop;
     mover()
@@ -68,8 +67,7 @@ $canvas.addEventListener('mousedown', e => {
 
 function mover() {
     for (i = 0; i < cuadritos.length; i++) {
-        if (mouseDown) {
-            if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
+            if (cuadritos[i].xPos < (mouseX-80) && (cuadritos[i].xPos + cuadritoswidth) > (mouseX-80) && cuadritos[i].yPos < (mouseY-80) && (cuadritos[i].yPos + cuadritosheight) > (mouseY-80)) {
                 if (cuadritos[i].xPos == espacioX && (cuadritos[i].yPos == espacioY - cuadritosheight || cuadritos[i].yPos == espacioY + cuadritosheight) || cuadritos[i].yPos == espacioY && (cuadritos[i].xPos == espacioX - cuadritoswidth || cuadritos[i].xPos == espacioX + cuadritoswidth)) {
                         ctx.clearRect(cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
                         nuevoEspacioX = cuadritos[i].xPos
@@ -81,7 +79,6 @@ function mover() {
                     }
             }
         ctx.drawImage(img, cuadritos[i].sx, cuadritos[i].sy, cuadritoswidth, cuadritosheight, cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
-        }
     }
 }
 
@@ -239,6 +236,8 @@ function nextLevel (){
     }
     ctx.clearRect(0, 0, $canvas.width, $canvas.height)
     cuadritos.length = 0
+    espacioX = ($canvas.width / grid) * (grid - 1)
+    espacioY = ($canvas.height / grid) * (grid - 1)
     iniciar()
 }
 
