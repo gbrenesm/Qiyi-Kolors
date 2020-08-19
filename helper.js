@@ -4,7 +4,7 @@ function iniciar() {
     img = new Image();
     img.addEventListener(`load`, dividirCuadritos)
     let random = Math.floor(Math.random() * imagenesColors.length)
-    img.src = "./img/Almendro_en_flor.jpg"
+    img.src = imagenesColors[random ]
 }
 
 function dividirCuadritos() {
@@ -242,16 +242,16 @@ function nextLevel (){
     iniciar()
 }
 
-function winGame(){
+// function winGame(){
     
-    //desplegar mensaje
-    //desplegar botón de restart
-}
+//     //desplegar mensaje
+//     //desplegar botón de restart
+// }
 
-funtion restart(){
-    cuadritos.length = 0
-    nivel = 1
-    grid = 3
-    //resgresar todo a su posición original
-    //voler a sacar el botón de start game
-}
+// funtion restart(){
+//     cuadritos.length = 0
+//     nivel = 1
+//     grid = 3
+//     //resgresar todo a su posición original
+//     //voler a sacar el botón de start game
+// }
