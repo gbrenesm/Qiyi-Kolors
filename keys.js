@@ -10,15 +10,8 @@ buttonstart.addEventListener('click', () => {
     canvasshow.style.visibility = 'visible';
     ins.style.visibility = 'visible';
     titledis.style.visibility = 'hidden';
-    //nextleve.style.visibility = 'visible';
     enableAutoplay()
-
 });
-
-//Asigno el pensamiento que le corresponde a la imagen 
-/* nextleve.addEventListener('click', () => {
-    document.getElementById("img-picker").src = zenSeleccionado
-}); */
 
 var x = document.getElementById("song");
 
@@ -36,7 +29,3 @@ function disableAutoplay() {
 function checkAutoplay() {
     alert(x.autoplay);
 }
-
-// function myFunction() {
-//     document.getElementById("img-picker").src = imagenseleccionada
-// }

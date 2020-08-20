@@ -3,4 +3,3 @@ const ctx = $canvas.getContext("2d")
 
 const startBtn = document.querySelector("#start-game")
 const nextLevlBtn = document.querySelector("#next-level")
-const $blindColor = document.querySelector("#blind-color")

@@ -236,7 +236,6 @@ function winLevel() {
                     cuadritos[34].sx === cuadritos[34].xPos && cuadritos[34].sy == cuadritos[34].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     winGame()
-                        //llamar al botón de siguiente nivel
                 }
             }
             break;
@@ -257,16 +256,20 @@ function nextLevel() {
     //imagenesColors.splice(imgIndex, 1)
 }
 
-// function winGame(){
+function winGame(){
+    nextLevlBtn.innerHTML = "Restart"
+    nextLevlBtn.style.visibility = 'visible'
+    nextLevlBtn.addEventListener("click", reiniciar)
+}
 
-//     //desplegar mensaje
-//     //desplegar botón de restart
-// }
-
-// funtion restart(){
-//     cuadritos.length = 0
-//     nivel = 1
-//     grid = 3
-//     //resgresar todo a su posición original
-//     //voler a sacar el botón de start game
-// }
+function reiniciar(){
+    ctx.clearRect(0, 0, $canvas.width, $canvas.height)
+    nivel = 1
+    grid = 3
+    cuadritos.length = 0
+    espacioX = ($canvas.width / grid) * (grid - 1)
+    espacioY = ($canvas.height / grid) * (grid - 1)
+    nextLevlBtn.innerHTML = "Next Level!"
+    nextLevlBtn.style.visibility = 'hidden'
+    iniciar()
+}
