@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Qiyi Kolors</title>
+</head>
+
+<body>
+    <audio id="song" autoplay>
+        <source src="img/Ambient Meditation.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <section class="div-mobile">
+        <img src="img/mobile.jpg" alt="" style="width: 50%; height: 50%; display: flex; justify-content: center; align-items: center;">
+
+    </section>
+    <section class="block">
+        <nav>
+
+            <ul>
+                <li id="instructions" class="tooltip" style="visibility: hidden;"> <a>Instrucciones<span class="classic">Haga clic en las casillas para moverlo y formar el degradado correcto. ¡Colocate en la imagen a un lado para dar una pista!</span></a> </li>
+
+
+                <li><a href="www.qiyikolors.xyz/colorblind/index.html">Colorblind</a>
+                </li>
+                <li><a href="www.qiyikolors.xyz"> English</a>
+                </li>
+                <!--  <li><a id="mute"> Mute </a>
+                </li> -->
+            </ul>
+        </nav>
+        <section>
+            <div>
+                <h1 id="titleid" title="Qiyi Kolors" class="titl" style="visibility: visible;">
+                    Qiyi Kolors
+                </h1>
+                <div id="start-game1" style="visibility: visible;">
+                    <div class="parrafo">
+                        <p class="back-letters">Qiyi kolors es un juego que surge de una herencia oriental y está inspirado en un rompecabezas japonés que intenta ordenar los números en orden ascendente y que está limitado por una matriz de diferentes dimensiones.</p>
+                        <p class="back-letters">Después de que comience el juego, haga clic en los cuadrados para resolver el gradiente Qiyi</p>
+
+                    </div>
+                    <div class="inicio-anim">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_NTAfSF.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player><button id="start-game" class="glow-on-hover" type="button" onclick="document.getElementById('start-game').style.visibility='hidden'">Comenzar!</button>
+                    </div>
+
+
+                </div>
+
+                <div class="levels" id="levels1" style="visibility: hidden;">
+                    <div class="gameboard">
+
+                        <canvas id="test" width="600 " height="600 " style="border: 5px solid linear-gradient(to left, #051937, #00285f, #003688, #0d44b3, #3450de); background-color: #000000;"></canvas>
+
+                    </div>
+
+                    <div class="inicio-anim">
+
+                        <img class="img-hover" id="img-picker" src="img/1.jpg" alt="" style="width: 300px; height: 300px;">
+                        <!--                         <img id="zen-picker" src="img/1a.jpg" alt="" style="width: 300px; height: 300px;">
+ -->
+                        <button id="next-level" class="glow-on-hover" type="button" style="visibility: hidden">Siguiente nivel!</button>
+                        <p class="parrafo-ins" style="width: 300px; height: 250px; justify-content: center; text-align: center; padding-left:30px; padding-top: 50px; margin-top: 30px; text-justify:newspaper">Click the center of the square to move it to the free space. You can pass the mouse on the image above to take a hint</p>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+    </section>
+    <script src="canva.js "></script>
+
+
+    <script src="helper.js "></script>
+    <script src="variables.js "></script>
+    <script src="keys.js "></script>
+
+</body>
+
+</html>
