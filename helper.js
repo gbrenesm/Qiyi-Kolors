@@ -101,6 +101,8 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
                     document.getElementById("img-picker").src = zenSeleccionado
+                        //
+                    document.getElementById("img-picker").classList.remove("img-hover")
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -159,7 +161,7 @@ function winLevel() {
                     nextLevlBtn.style.visibility = 'visible'
                     document.getElementById("img-picker").src = zenSeleccionado
                     nextLevlBtn.addEventListener("click", nextLevel)
-                    
+
 
                 }
             }
@@ -244,6 +246,7 @@ function winLevel() {
 
 function nextLevel() {
     nextLevlBtn.style.visibility = 'hidden'
+    document.getElementById("img-picker").classList.add("img-hover")
     nivel++
     if (nivel < 3 || nivel == 4) {
         grid++
@@ -256,13 +259,13 @@ function nextLevel() {
     imagenesColors.splice(imagenIndex, 1)
 }
 
-function winGame(){
+function winGame() {
     nextLevlBtn.innerHTML = "Restart"
     nextLevlBtn.style.visibility = 'visible'
     nextLevlBtn.addEventListener("click", reiniciar)
 }
 
-function reiniciar(){
+function reiniciar() {
     ctx.clearRect(0, 0, $canvas.width, $canvas.height)
     nivel = 1
     grid = 3
