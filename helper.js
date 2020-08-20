@@ -101,7 +101,6 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
                     document.getElementById("img-picker").src = zenSeleccionado
-                        //
                     document.getElementById("img-picker").classList.remove("img-hover")
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
@@ -127,6 +126,7 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
                     document.getElementById("img-picker").src = zenSeleccionado
+                    document.getElementById("img-picker").classList.remove("img-hover")
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -160,6 +160,7 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
                     document.getElementById("img-picker").src = zenSeleccionado
+                    document.getElementById("img-picker").classList.remove("img-hover")
                     nextLevlBtn.addEventListener("click", nextLevel)
 
 
@@ -195,6 +196,7 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
                     document.getElementById("img-picker").src = zenSeleccionado
+                    document.getElementById("img-picker").classList.remove("img-hover")
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -273,6 +275,7 @@ function reiniciar() {
     imagenesColors = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg", "./img/6.jpg", "./img/7.jpg", "./img/8.jpg", "./img/9.jpg", "./img/10.jpg"]
     espacioX = ($canvas.width / grid) * (grid - 1)
     espacioY = ($canvas.height / grid) * (grid - 1)
+    document.getElementById("img-picker").classList.add("img-hover")
     nextLevlBtn.innerHTML = "Next Level!"
     nextLevlBtn.style.visibility = 'hidden'
     iniciar()
