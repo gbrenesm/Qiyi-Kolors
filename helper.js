@@ -1,10 +1,15 @@
 startBtn.addEventListener("click", iniciar)
+$blindColor.addEventListener("click", () => {
+    $blindColor.innerHTML = "All Colors"
+}
+)
 
 function iniciar() {
     img = new Image();
     img.addEventListener(`load`, dividirCuadritos)
     let random = Math.floor(Math.random() * imagenesColors.length)
-    img.src = imagenesColors[random]
+    let imgIndex = random
+    img.src = imagenesColors[imgIndex]
     imagenseleccionada = img.src
     document.getElementById("img-picker").src = imagenseleccionada
 }
@@ -152,7 +157,7 @@ function winLevel() {
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
-                    extLevlBtn.style.visibility = 'visible'
+                    nextLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -184,7 +189,7 @@ function winLevel() {
                     cuadritos[22].sx === cuadritos[22].xPos && cuadritos[22].sy == cuadritos[22].yPos &&
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
-                    extLevlBtn.style.visibility = 'visible'
+                    nextLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -237,17 +242,20 @@ function winLevel() {
 
 function nextLevel() {
     nextLevlBtn.style.visibility = 'hidden'
-    document.getElementById("img-picker").src = ""
+    // document.getElementById("img-picker").src = ""
     nivel++
-    imagenesColors = imagenesColors.filter(imagen => imagen !== imagenseleccionada)
     if (nivel < 3 || nivel == 4) {
         grid++
+    }
+    else {
+        
     }
     ctx.clearRect(0, 0, $canvas.width, $canvas.height)
     cuadritos.length = 0
     espacioX = ($canvas.width / grid) * (grid - 1)
     espacioY = ($canvas.height / grid) * (grid - 1)
     iniciar()
+    //imagenesColors.splice(imgIndex, 1)
 }
 
 // function winGame(){
