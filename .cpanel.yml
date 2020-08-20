@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/qiyikolors/public_html/
+    - /bin/cp -R * $DEPLOYPATH
