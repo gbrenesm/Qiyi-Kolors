@@ -431,11 +431,12 @@ button {
     }
 }
 
-@media screen and (min-height: 0px) and (max-height: 780px) {
+
+/* @media screen and (min-height: 0px) and (max-height: 780px) {
     .block {
         display: none;
     }
-}
+} */
 
 .div-mobile {
     display: flex;
