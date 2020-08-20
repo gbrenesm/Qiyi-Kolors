@@ -1,8 +1,4 @@
 startBtn.addEventListener("click", iniciar)
-$blindColor.addEventListener("click", () => {
-    $blindColor.innerHTML = "All Colors"
-}
-)
 
 function iniciar() {
     img = new Image();
@@ -10,6 +6,7 @@ function iniciar() {
     let random = Math.floor(Math.random() * imagenesColors.length)
     let imgIndex = random
     img.src = imagenesColors[imgIndex]
+    zenSeleccionado = imagenesZen[random]
     imagenseleccionada = img.src
     document.getElementById("img-picker").src = imagenseleccionada
 }
@@ -74,7 +71,7 @@ $canvas.addEventListener('mousedown', e => {
 
 function mover() {
     for (i = 0; i < cuadritos.length; i++) {
-        if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY  && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
+        if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
             if (cuadritos[i].xPos == espacioX && (cuadritos[i].yPos == espacioY - cuadritosheight || cuadritos[i].yPos == espacioY + cuadritosheight) || cuadritos[i].yPos == espacioY && (cuadritos[i].xPos == espacioX - cuadritoswidth || cuadritos[i].xPos == espacioX + cuadritoswidth)) {
                 ctx.clearRect(cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
                 nuevoEspacioX = cuadritos[i].xPos
@@ -103,6 +100,7 @@ function winLevel() {
                     cuadritos[7].sx === cuadritos[7].xPos && cuadritos[7].sy == cuadritos[7].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
+                    document.getElementById("img-picker").src = zenSeleccionado
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -126,6 +124,7 @@ function winLevel() {
                     cuadritos[14].sx === cuadritos[14].xPos && cuadritos[14].sy == cuadritos[14].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
+                    document.getElementById("img-picker").src = zenSeleccionado
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -158,7 +157,10 @@ function winLevel() {
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
+                    document.getElementById("img-picker").src = zenSeleccionado
                     nextLevlBtn.addEventListener("click", nextLevel)
+                    
+
                 }
             }
             break;
@@ -190,6 +192,7 @@ function winLevel() {
                     cuadritos[23].sx === cuadritos[23].xPos && cuadritos[23].sy == cuadritos[23].yPos) {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
+                    document.getElementById("img-picker").src = zenSeleccionado
                     nextLevlBtn.addEventListener("click", nextLevel)
                 }
             }
@@ -242,13 +245,9 @@ function winLevel() {
 
 function nextLevel() {
     nextLevlBtn.style.visibility = 'hidden'
-    // document.getElementById("img-picker").src = ""
     nivel++
     if (nivel < 3 || nivel == 4) {
         grid++
-    }
-    else {
-        
     }
     ctx.clearRect(0, 0, $canvas.width, $canvas.height)
     cuadritos.length = 0
