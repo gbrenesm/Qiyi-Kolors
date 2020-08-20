@@ -4,10 +4,10 @@ function iniciar() {
     img = new Image();
     img.addEventListener(`load`, dividirCuadritos)
     let random = Math.floor(Math.random() * imagenesColors.length)
-    let imgIndex = random
-    img.src = imagenesColors[imgIndex]
+    img.src = imagenesColors[random]
     zenSeleccionado = imagenesZen[random]
     imagenseleccionada = img.src
+    imagenIndex = random
     document.getElementById("img-picker").src = imagenseleccionada
 }
 
@@ -253,7 +253,7 @@ function nextLevel() {
     espacioX = ($canvas.width / grid) * (grid - 1)
     espacioY = ($canvas.height / grid) * (grid - 1)
     iniciar()
-    //imagenesColors.splice(imgIndex, 1)
+    imagenesColors.splice(imagenIndex, 1)
 }
 
 function winGame(){
@@ -267,6 +267,7 @@ function reiniciar(){
     nivel = 1
     grid = 3
     cuadritos.length = 0
+    imagenesColors = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg", "./img/6.jpg", "./img/7.jpg", "./img/8.jpg", "./img/9.jpg", "./img/10.jpg"]
     espacioX = ($canvas.width / grid) * (grid - 1)
     espacioY = ($canvas.height / grid) * (grid - 1)
     nextLevlBtn.innerHTML = "Next Level!"
