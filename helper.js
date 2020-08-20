@@ -5,8 +5,11 @@ function iniciar() {
     img.addEventListener(`load`, dividirCuadritos)
     let random = Math.floor(Math.random() * imagenesColors.length)
     img.src = imagenesColors[random]
+    zenSeleccionado = imagenesZen[random]
     imagenseleccionada = img.src
     document.getElementById("img-picker").src = imagenseleccionada
+
+
 }
 
 function dividirCuadritos() {
@@ -69,7 +72,7 @@ $canvas.addEventListener('mousedown', e => {
 
 function mover() {
     for (i = 0; i < cuadritos.length; i++) {
-        if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY  && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
+        if (cuadritos[i].xPos < mouseX && (cuadritos[i].xPos + cuadritoswidth) > mouseX && cuadritos[i].yPos < mouseY && (cuadritos[i].yPos + cuadritosheight) > mouseY) {
             if (cuadritos[i].xPos == espacioX && (cuadritos[i].yPos == espacioY - cuadritosheight || cuadritos[i].yPos == espacioY + cuadritosheight) || cuadritos[i].yPos == espacioY && (cuadritos[i].xPos == espacioX - cuadritoswidth || cuadritos[i].xPos == espacioX + cuadritoswidth)) {
                 ctx.clearRect(cuadritos[i].xPos, cuadritos[i].yPos, cuadritoswidth, cuadritosheight)
                 nuevoEspacioX = cuadritos[i].xPos
@@ -99,6 +102,10 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
+                        //
+                    nextLevlBtn.addEventListener('click', () => {
+                        document.getElementById("img-picker").src = zenSeleccionado
+                    });
                 }
             }
             break;
@@ -122,6 +129,10 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     nextLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
+                        //
+                    nextLevlBtn.addEventListener('click', () => {
+                        document.getElementById("img-picker").src = zenSeleccionado
+                    });
                 }
             }
             break;
@@ -154,6 +165,11 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     extLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
+                        //
+                    nextLevlBtn.addEventListener('click', () => {
+                        document.getElementById("img-picker").src = zenSeleccionado
+                    });
+
                 }
             }
             break;
@@ -186,6 +202,10 @@ function winLevel() {
                     ctx.drawImage(img, 0, 0, $canvas.width, $canvas.height)
                     extLevlBtn.style.visibility = 'visible'
                     nextLevlBtn.addEventListener("click", nextLevel)
+                        //
+                    nextLevlBtn.addEventListener('click', () => {
+                        document.getElementById("img-picker").src = zenSeleccionado
+                    });
                 }
             }
             break;
@@ -238,6 +258,7 @@ function winLevel() {
 function nextLevel() {
     nextLevlBtn.style.visibility = 'hidden'
     document.getElementById("img-picker").src = ""
+
     nivel++
     imagenesColors = imagenesColors.filter(imagen => imagen !== imagenseleccionada)
     if (nivel < 3 || nivel == 4) {

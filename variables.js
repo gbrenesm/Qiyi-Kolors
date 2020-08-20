@@ -12,6 +12,10 @@ let mouseDown = false;
 let imagenesColors = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg", "./img/6.jpg", "./img/7.jpg", "./img/8.jpg", "./img/9.jpg", "./img/10.jpg"];
 let imagenseleccionada = ""
 let imagenesUsadas
+    //creo un array de frases correspondientes por imagen
+let imagenesZen = ["./img/1a.png", "./img/2a.png", "./img/3a.png", "./img/4a.png", "./img/5a.png", "./img/6a.png", "./img/7a.png", "./img/8a.png", "./img/9a.png", "./img/10a.png"];
+let zenSeleccionado;
+
 
 // El número que es divisible entre 3, 4 y 5 es 180, o sea que puede ser de: 360 ó 720
 
