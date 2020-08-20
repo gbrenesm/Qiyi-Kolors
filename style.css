@@ -424,3 +424,27 @@ button {
     background: #000000;
     border: 1px solid #960f6d;
 }
+
+@media screen and (min-width: 0px) and (max-width: 780px) {
+    .block {
+        display: none;
+    }
+}
+
+@media screen and (min-height: 0px) and (max-height: 750px) {
+    .block {
+        display: none;
+    }
+}
+
+.div-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .div-mobile {
+        display: none;
+    }
+}
